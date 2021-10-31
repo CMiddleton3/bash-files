@@ -17,7 +17,7 @@ alias sc='systemctl'
 alias cls='clear'
 alias reload='source ~/.bash_profile'
 alias q='exit'
-alias err='journalctl  -xe --since "60 minute ago"'
+alias err='journalctl  -xe --since "60 minute ago'
 
 # Add colors for filetype and  human-readable sizes by default on 'ls':
 alias ls='ls -h --color'
