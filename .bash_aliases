@@ -17,6 +17,7 @@ alias sc='systemctl'
 alias cls='clear'
 alias reload='source ~/.bash_profile'
 alias q='exit'
+alias err='journalctl  -xe --since "60 minute ago"'
 
 # Add colors for filetype and  human-readable sizes by default on 'ls':
 alias ls='ls -h --color'
@@ -28,18 +29,37 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
 alias ll="ls -lv --group-directories-first"
-alias lm='ll |more'        #  Pipe through 'more'
+alias lm='ll | less -r'        #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 alias l='ls -CF'
 
+# exa LS Replacement for long direct searches.
+alias lll=' exa -alghUmT --level=1 --group-directories-first --extended --color=always'
+alias lllm=' exa -alghUmT --level=1 --group-directories-first --extended --color=always | less -r'
+
+alias l1=' exa -alghUmT --level=1 --group-directories-first --extended --color=always'
+
+# 2 Directories in
+alias l2=' exa -alghUmT --level=2 --group-directories-first --extended --color=always'
+alias l2m=' exa -alghUmT --level=2 --group-directories-first --extended --color=always | less -r'
+
+# Three Directories in
+alias l3=' exa -alghUmT --level=3 --group-directories-first --extended --color=always'
+alias l3m=' exa -alghUmT --level=2 --group-directories-first --extended --color=always | less -r'
+
+# Full Recursive
+alias llr=' exa -alghUmT --group-directories-first --extended'
+alias llrm=' exa -alghUmT --level=2 --group-directories-first --extended --color=always | less -r'
 
 # Programs
 alias rr='ranger'
 alias mt='multitail'
 alias vi='vim'
 alias gg='glances --hide-kernel-threads --disable-sensors --process-short-name'
-alias py='python.exe'
+# Python 3
+alias py='python3'
+alias pip='pip3'
 
 # Navigation
 alias gh='cd ~'
@@ -54,3 +74,4 @@ alias gdv='cd /mnt/c/' # Add you own local development directory
 alias exp='explorer.exe .' 
 alias powershell='powershell.exe'
 alias dos='cmd.exe'
+alias code='code ."
