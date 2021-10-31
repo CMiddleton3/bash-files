@@ -1,4 +1,3 @@
-# make vim look better
 syntax enable
 set number
 set ts=4
