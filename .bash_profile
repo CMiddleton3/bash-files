@@ -1,4 +1,5 @@
-# User specific System name                                                                                                                                                                               SystemName="CentOS-Server"
+# User specific System name   
+SystemName="CentOS-Server"
 
 # Get system IP Address
 THEip=$(ifconfig $(route -n | grep ^0.0.0.0 | awk '{print $NF}') | grep inet | grep -v inet6 | awk '{print $2}')
