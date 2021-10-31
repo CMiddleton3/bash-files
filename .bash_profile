@@ -5,7 +5,7 @@ SystemName="CentOS-Server"
 THEip=$(ifconfig $(route -n | grep ^0.0.0.0 | awk '{print $NF}') | grep inet | grep -v inet6 | awk '{print $2}')
 
 # Better looking Prompt with name, ip and working directory
-export PS1="\[\e[36m\]$SystemName\[\e[m\][\[\e[33m\]@"$THEip"[\e[m\]]-\[\e[31m\]\u\[\e[m\]-:\[\e[32m\]\w\[\e[m\]\[\e[33m\]:\[\e[m\]\[\e[34m\]>>\[\e[m\] "
+export PS1="\[\e[34m\]$SystemName\[\e[m\]\[\e[33m\][\[\e[m\]\[\e[33m\]$THEip\[\e[m\]\[\e[33m\]]\[\e[m\]-\[\e[31m\]\u\[\e[m\]-:\[\e[32m\]\w\[\e[m\]:\[\e[36m\]>>\[\e[m\] "
 
 # Welcome Message with important information
 echo -e "\e[34m Welcome to \e[32m $SystemName @"$THEip" \e[0m | $(date '+%b %d %H:%M') | \e[91m $HOSTNAME"
