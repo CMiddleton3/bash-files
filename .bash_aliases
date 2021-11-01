@@ -46,11 +46,11 @@ alias l2m=' exa -alghUmT --level=2 --group-directories-first --extended --color=
 
 # Three Directories in
 alias l3=' exa -alghUmT --level=3 --group-directories-first --extended --color=always'
-alias l3m=' exa -alghUmT --level=2 --group-directories-first --extended --color=always | less -r'
+alias l3m=' exa -alghUmT --level=3 --group-directories-first --extended --color=always | less -r'
 
 # Full Recursive
 alias llr=' exa -alghUmT --group-directories-first --extended'
-alias llrm=' exa -alghUmT --level=2 --group-directories-first --extended --color=always | less -r'
+alias llrm=' exa -alghUmT --group-directories-first --extended --color=always | less -r'
 
 # Programs
 alias rr='ranger'
