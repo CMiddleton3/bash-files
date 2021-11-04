@@ -32,6 +32,7 @@ alias ll="ls -lv --group-directories-first"
 alias lm='ll | less -r'        #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
+alias lam='ll -A | less -r'
 alias l='ls -CF'
 
 # exa LS Replacement for long direct searches.
@@ -61,8 +62,13 @@ alias gg='glances --hide-kernel-threads --disable-sensors --process-short-name'
 alias py='python3'
 alias pip='pip3'
 
+# Kubernetes
+k='kubectl'
+
+
 # Navigation
-alias gh='cd ~'
+alias gh='cd ~'  # Go Home
+alias glog='cd /var/log/'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -73,5 +79,7 @@ alias gdv='cd /mnt/c/' # Add you own local development directory
 # Windows programs
 alias exp='explorer.exe .' 
 alias powershell='powershell.exe'
+alias pshell='powershell.exe'
 alias dos='cmd.exe'
-alias code='code ."
+alias code='code'
+alias note='notepad.exe'
