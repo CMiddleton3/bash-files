@@ -57,7 +57,7 @@ alias llrm=' exa -alghUmT --group-directories-first --extended --color=always | 
 alias rr='ranger'
 alias mt='multitail'
 alias vi='vim'
-alias gg='glances --hide-kernel-threads --disable-sensors --process-short-name'
+alias gg='glances'
 # Python 3
 alias py='python3'
 alias pip='pip3'
