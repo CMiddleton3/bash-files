@@ -10,7 +10,8 @@ alias duu='du -sh'
 alias duuu='du --max-depth=1 -h'
 
 
-# Sys
+# Sysi
+alias upgrate='sudo apt -y update;sudo apt -y upgrade;sudo apt -y autoremove'
 alias pp='stat -c "%a %n" *'
 alias ports='netstat -tulanp'
 alias sc='systemctl'
