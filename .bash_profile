@@ -4,6 +4,9 @@ SystemName="CentOS-Server"
 # Get system IP Address
 THEip=$(ifconfig $(route -n | grep ^0.0.0.0 | awk '{print $NF}') | grep inet | grep -v inet6 | awk '{print $2}')
 
+# Better looking man pages:
+export MANPAGER="sh -c 'col -bx | vim -c \"set ft=man nomod nolist nowrap\" -'"
+
 # Better looking Prompt with name, ip and working directory
 export PS1="\[\e[34m\]$SystemName\[\e[m\]\[\e[33m\][\[\e[m\]\[\e[33m\]$THEip\[\e[m\]\[\e[33m\]]\[\e[m\]-\[\e[31m\]\u\[\e[m\]-:\[\e[32m\]\w\[\e[m\]:\[\e[36m\]>>\[\e[m\] "
 
