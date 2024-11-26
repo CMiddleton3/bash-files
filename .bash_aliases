@@ -19,6 +19,8 @@ alias cls='clear'
 alias reload='source ~/.bash_profile'
 alias q='exit'
 alias err='journalctl  -xe --since "60 minute ago'
+alias myip='curl ifconfig.me'                        # Show public IP
+alias sysctl='sudo systemctl'
 
 # Add colors for filetype and  human-readable sizes by default on 'ls':
 alias ls='ls -h --color'
@@ -28,6 +30,15 @@ alias lt='ls -ltr'         #  Sort by date, most recent last.
 alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
 alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
+# Dockers
+alias dps='docker ps'                            # List running containers
+alias dpa='docker ps -a'                         # List all containers
+alias di='docker images'                         # List Docker images
+alias drm='docker rm $(docker ps -aq)'           # Remove all containers
+alias dri='docker rmi $(docker images -q)'       # Remove all images
+alias dstop='docker stop $(docker ps -q)'        # Stop all running containers
+
+
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
 alias ll="ls -lvA --group-directories-first"
 alias lm='ll | less -r'        #  Pipe through 'more'
@@ -35,6 +46,7 @@ alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 alias lam='ll -A | less -r'
 alias l='ls -CF'
+alias mkdir='mkdir -pv'       # Create directories and show output
 
 # exa LS Replacement for long direct searches.
 alias lll=' exa -alghUmT --level=1 --group-directories-first --extended --color=always'
