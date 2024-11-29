@@ -1,98 +1,70 @@
-# SysCMD
-alias rm='rm -i'
-alias cp='cp -i'
-alias ln='ln -i'
-alias mv='mv -i'
+# General Safety Aliases
+alias rm='rm -i'               # Interactive remove
+alias cp='cp -i'               # Interactive copy
+alias ln='ln -i'               # Interactive link creation
+alias mv='mv -i'               # Interactive move
 
-# DU
-alias du='du -h'
-alias duu='du -sh'
-alias duuu='du --max-depth=1 -h'
+# Disk Usage
+alias du='du -h'               # Human-readable disk usage
+alias duu='du -sh'             # Summarize directory size
+alias duuu='du --max-depth=1 -h' # Human-readable depth-1 disk usage
 
+# System Updates and Information
+alias upgrade='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y' # Full system upgrade
+alias ports='netstat -tulanp'  # List active ports and services
+alias err='journalctl -xe --since "1 hour ago"' # Show errors from the past hour
+alias myip='curl ifconfig.me'  # Show public IP address
+alias sysctl='sudo systemctl'  # Shorter systemctl alias
+alias servlist='sudo systemctl list-units --state=running' # List running services
 
-# Sysi
-alias upgrate='sudo apt -y update;sudo apt -y upgrade;sudo apt -y autoremove'
-alias pp='stat -c "%a %n" *'
-alias ports='netstat -tulanp'
-alias sc='systemctl'
-alias cls='clear'
-alias reload='source ~/.bash_profile'
-alias q='exit'
-alias err='journalctl  -xe --since "60 minute ago'
-alias myip='curl ifconfig.me'                        # Show public IP
-alias sysctl='sudo systemctl'
+# Shell Management
+alias cls='clear'              # Clear screen
+alias reload='source ~/.bashrc' # Reload bash configuration
+alias q='exit'                 # Quit terminal
 
-# Add colors for filetype and  human-readable sizes by default on 'ls':
-alias ls='ls -h --color'
-alias lx='ls -lXB'         #  Sort by extension.
-alias lk='ls -lSr'         #  Sort by size, biggest last.
-alias lt='ls -ltr'         #  Sort by date, most recent last.
-alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
-alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
-
-# Dockers
-alias dps='docker ps'                            # List running containers
-alias dpa='docker ps -a'                         # List all containers
-alias di='docker images'                         # List Docker images
-alias drm='docker rm $(docker ps -aq)'           # Remove all containers
-alias dri='docker rmi $(docker images -q)'       # Remove all images
-alias dstop='docker stop $(docker ps -q)'        # Stop all running containers
-
-
-# The ubiquitous 'll': directories first, with alphanumeric sorting:
-alias ll="ls -lvA --group-directories-first"
-alias lm='ll | less -r'        #  Pipe through 'more'
-alias lr='ll -R'           #  Recursive ls.
-alias la='ll -A'           #  Show hidden files.
-alias lam='ll -A | less -r'
-alias l='ls -CF'
-alias mkdir='mkdir -pv'       # Create directories and show output
-
-# exa LS Replacement for long direct searches.
-alias lll=' exa -alghUmT --level=1 --group-directories-first --extended --color=always'
-alias lllm=' exa -alghUmT --level=1 --group-directories-first --extended --color=always | less -r'
-
-alias l1=' exa -alghUmT --level=1 --group-directories-first --extended --color=always'
-
-# 2 Directories in
-alias l2=' exa -alghUmT --level=2 --group-directories-first --extended --color=always'
-alias l2m=' exa -alghUmT --level=2 --group-directories-first --extended --color=always | less -r'
-
-# Three Directories in
-alias l3=' exa -alghUmT --level=3 --group-directories-first --extended --color=always'
-alias l3m=' exa -alghUmT --level=3 --group-directories-first --extended --color=always | less -r'
-
-# Full Recursive
-alias llr=' exa -alghUmT --group-directories-first --extended'
-alias llrm=' exa -alghUmT --group-directories-first --extended --color=always | less -r'
-
-# Programs
-alias rr='ranger'
-alias mt='multitail'
-alias vi='vim'
-alias gg='glances'
-# Python 3
-alias py='python3'
-alias pip='pip3'
-
-# Kubernetes
-k='kubectl'
-
+# File and Directory Management
+alias ls='ls -h --color=auto'  # Add colors and human-readable sizes
+alias lt='ls -ltr'             # List sorted by modification date
+alias ll='ls -lvA --group-directories-first' # Detailed list, directories first
+alias lm='ll | less -r'        # Paginate detailed list
+alias lr='ll -R'               # Recursive detailed list
+alias la='ll -A'               # Show all files including hidden ones
+alias l='ls -CF'               # Compact listing
+alias mkdir='mkdir -pv'        # Create directories with verbose output
 
 # Navigation
-alias gh='cd ~'  # Go Home
-alias glog='cd /var/log/'
-alias cd..='cd ..'
+alias gh='cd ~'                # Go Home
+alias cd..='cd ..'             # Up one directory
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../../'
-alias gdv='cd /mnt/c/' # Add you own local development directory
 
-# Windows programs
-alias exp='explorer.exe .' 
-alias powershell='powershell.exe'
-alias pshell='powershell.exe'
-alias dos='cmd.exe'
-alias code='code'
-alias note='notepad.exe'
+# Programs
+alias rr='ranger'              # Launch Ranger file manager
+alias mt='multitail'           # Launch MultiTail
+alias vi='vim'                 # Use Vim instead of Vi
+alias sudovim='sudo vim'       # Vim with sudo
+alias gg='glances'             # Launch Glances system monitor
+
+# Python
+alias py='python3'             # Short Python 3 alias
+alias pip='pip3'               # Short Pip 3 alias
+
+# Docker
+alias dps='docker ps'          # List running containers
+alias dpa='docker ps -a'       # List all containers
+alias dstop='docker stop $(docker ps -q)' # Stop all running containers
+
+# Kubernetes
+alias k='kubectl'              # Short Kubectl alias
+
+# Suggestions (Optional, Add if Useful)
+alias df='df -h'               # Human-readable disk space
+alias free='free -h'           # Human-readable memory usage
+alias grep='grep --color=auto' # Grep with color
+alias cls='clear; echo "Cleared screen!"' # Clear with message
+alias hist='history | tail -n 20' # Show last 20 commands
+alias top='htop'               # Use htop if installed
+alias gitlog='git log --oneline --graph --decorate --all' # Improved Git log
+
