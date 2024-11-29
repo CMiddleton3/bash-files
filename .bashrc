@@ -28,11 +28,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-HISTCONTROL=ignoreboth
-shopt -s histappend
-HISTSIZE=1000
-HISTFILESIZE=2000
 
 
-# Better looking man pages:
-export MANPAGER="sh -c 'col -bx | vim -c \"set ft=man nomod nolist nowrap\" -'"
+
+

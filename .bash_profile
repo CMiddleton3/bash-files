@@ -1,3 +1,12 @@
+# User-specific system name
+SystemName="LLama-Server"
+
+# These commands are setting configurations related to the shell history in a bash script
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # Source additional configuration files if they exist
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
@@ -6,9 +15,12 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+if [ -f ~/.win_aliases ]; then
+    . ~/.bash_aliases
+fi
 
-# User-specific system name
-SystemName="LLama-Server"
+# Better looking man pages:
+export MANPAGER="sh -c 'col -bx | vim -c \"set ft=man nomod nolist nowrap\" -'"
 
 # Get system IP Address
 THEip=$(ip route get 1 | awk '/src/ {print $7}')
