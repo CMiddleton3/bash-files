@@ -68,3 +68,7 @@ alias hist='history | tail -n 20' # Show last 20 commands
 alias top='htop'               # Use htop if installed
 alias gitlog='git log --oneline --graph --decorate --all' # Improved Git log
 
+# Ollama
+alias ops='ollama ps'          # Shows running ollama processes
+alias ols='ollama list'        # List all ollama models
+alias ostop='ollama stop'      # Stop Ollama model using it's name

@@ -1,0 +1,3 @@
+alias ops='ollama ps'          # Shows running ollama processes
+alias ols='ollama list'        # List all ollama models
+alias ostop='ollama stop'      # Stop Ollama model using it's name

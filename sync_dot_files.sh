@@ -20,9 +20,6 @@ cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .bash_aliases ~/.bash_aliases
 
-# Make the script executable
-chmod +x sync_dotfiles.sh
-
 # Source the updated dot files
 # source ~/.bashrc
 source ~/.bash_profile
