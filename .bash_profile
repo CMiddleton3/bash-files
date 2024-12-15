@@ -1,5 +1,5 @@
 # User-specific system name
-SystemName="LLama-Server"
+SystemName="REPLACE-ME"
 
 # These commands are setting configurations related to the shell history in a bash script
 HISTCONTROL=ignoreboth
