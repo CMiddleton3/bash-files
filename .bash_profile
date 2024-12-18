@@ -49,7 +49,7 @@ IPColor=$(get_random_color)
 UserColor=$(get_random_color)
 
 # PS1 prompt
-export PS1="$(colorize "$SystemName" $SystemColor)$(colorize "[$THEip]" $IPColor)-$(colorize "\u" $UserColor)-:\[\e[32m\]\w\[\e[m\]:\[\e[36m\]>>\[\e[m\] "
+export PS1="$(colorize "$SystemName" $SystemColor ps1)$(colorize "[$THEip]" $IPColor ps1)-$(colorize "\u" $UserColor ps1):\[\e[32m\]\w\[\e[m\]:\[\e[36m\]>>\[\e[m\] "
 
 # Welcome Message
 WelcomeColor=$(get_random_color)
