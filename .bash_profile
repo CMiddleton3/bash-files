@@ -16,7 +16,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 if [ -f ~/.win_aliases ]; then
-    . ~/.bash_aliases
+    . ~/.win_aliases
 fi
 
 # Better looking man pages:
