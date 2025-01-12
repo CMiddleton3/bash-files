@@ -39,6 +39,9 @@ if [ ! -z "$(git diff --name-only)" ]; then
     # Source the updated dot files only if there are changes
     echo "Sourcing updated dot files"
     source ~/.bash_profile
+else
+    # If there are no changes, echo a message indicating this
+    echo "No changes in repository."
 fi
 
 # Create a symlink to keep the .dot file synced only if it doesn't already exist
@@ -49,5 +52,7 @@ if [ ! -e ~/sync_dot_files.sh ]; then
 fi
 
 # Source the updated dot files
-echo "Sourcing updated dot files"
-source ~/.bash_profile
+if [ ! -z "$(git diff --name-only)" ]; then
+    echo "Sourcing updated dot files"
+    source ~/.bash_profile
+fi
