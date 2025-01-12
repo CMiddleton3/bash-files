@@ -19,8 +19,8 @@ git pull
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .bash_aliases ~/.bash_aliases
-cp .win_alaiases ~/.win_alaiases
-cp .misc_alaiases ~/.misc_alaiases
+cp .win_aliases ~/.win_aliases
+cp .misc_aliases ~/.misc_aliases
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
 # Source the updated dot files
@@ -28,4 +28,5 @@ cp .tmux.conf ~/.tmux.conf
 source ~/.bash_profile
 
 # Create a symlink to keep the .dot file synced
+chmod +x ~/bash-files/sync_dot_files.sh
 ln -s ~/bash-files/sync_dot_files.sh ~/sync_dot_files.sh
