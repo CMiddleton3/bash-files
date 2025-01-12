@@ -19,21 +19,27 @@ cd "$repo_dir"
 echo "Pulling latest changes from repository"
 git pull
 
-# Copy the dot files to your home directory
-echo "Copying .bashrc"
-cp .bashrc ~/.bashrc
-echo "Copying .bash_profile"
-cp .bash_profile ~/.bash_profile
-echo "Copying .bash_aliases"
-cp .bash_aliases ~/.bash_aliases
-echo "Copying .win_aliases"
-cp .win_aliases ~/.win_aliases
-echo "Copying .misc_aliases"
-cp .misc_aliases ~/.misc_aliases
-echo "Copying .vimrc"
-cp .vimrc ~/.vimrc
-echo "Copying .tmux.conf"
-cp .tmux.conf ~/.tmux.conf
+# Check if there are any changes in the repository
+if [ ! -z "$(git diff --name-only)" ]; then
+    # Copy the dot files to your home directory only if there are changes
+    echo "Copying .bashrc"
+    cp .bashrc ~/.bashrc
+    echo "Copying .bash_profile"
+    cp .bash_profile ~/.bash_profile
+    echo "Copying .bash_aliases"
+    cp .bash_aliases ~/.bash_aliases
+    echo "Copying .win_aliases"
+    cp .win_aliases ~/.win_aliases
+    echo "Copying .misc_aliases"
+    cp .misc_aliases ~/.misc_aliases
+    echo "Copying .vimrc"
+    cp .vimrc ~/.vimrc
+    echo "Copying .tmux.conf"
+    cp .tmux.conf ~/.tmux.conf
+    # Source the updated dot files only if there are changes
+    echo "Sourcing updated dot files"
+    source ~/.bash_profile
+fi
 
 # Create a symlink to keep the .dot file synced only if it doesn't already exist
 if [ ! -e ~/sync_dot_files.sh ]; then
