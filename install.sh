@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Update
+echo "Updating"
+sudo apt -y update
+
+# Upgrade 
+echo "Upgrading"
+sudo apt -y upgrade
+
 # Install unzip
 echo "Installing unzip..."
 sudo apt-get install -y unzip
@@ -53,7 +61,7 @@ echo "Installing multitail..."
 sudo apt-get install -y multitail
 
 # Install bing9-utils
-echo "Installing bing9-utils..."
+echo "Installing bind9-utils..."
 sudo apt-get install -y bing9-utils
 
 echo "All software installed successfully."
