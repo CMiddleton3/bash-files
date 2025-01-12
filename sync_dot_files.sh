@@ -26,3 +26,6 @@ cp .tmux.conf ~/.tmux.conf
 # Source the updated dot files
 # source ~/.bashrc
 source ~/.bash_profile
+
+# Create a symlink to keep the .dot file synced
+ln -s ~/bash-files/sync_dot_files.sh ~/sync_dot_files.sh

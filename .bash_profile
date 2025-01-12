@@ -1,6 +1,12 @@
 # User-specific system name
 SystemName="REPLACE-ME"
 
+# User Sys_info file to save computer name
+if [ -f ~/.sys_info ]; then
+    . ~/.sys_info
+fi
+
+
 # These commands are setting configurations related to the shell history in a bash script
 HISTCONTROL=ignoreboth
 shopt -s histappend
