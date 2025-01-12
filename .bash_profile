@@ -47,9 +47,9 @@ if ! shopt -oq posix; then
 fi
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
+# if [ -x /usr/bin/dircolors ]; then
+#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+# fi
 
 # Better looking man pages:
 export MANPAGER="sh -c 'col -bx | vim -c \"set ft=man nomod nolist nowrap\" -'"
@@ -57,6 +57,9 @@ export MANPAGER="sh -c 'col -bx | vim -c \"set ft=man nomod nolist nowrap\" -'"
 # Get system IP Address
 THEip=$(hostname -I | awk '{print $1}')
 THEip=${THEip:-"No Network"}
+
+# Fetch public IP address
+PublicIP=$(curl -s https://api.ipify.org)
 
 # Function to get random ANSI color code
 get_random_color() {
@@ -87,8 +90,8 @@ export PS1="$(colorize "$SystemName" $SystemColor ps1)$(colorize "[$THEip]" $IPC
 WelcomeColor=$(get_random_color)
 WarningColor=$(get_random_color)
 
-echo -e "$(colorize "Welcome to $SystemName @ $THEip" $WelcomeColor) | $(date '+%b %d %H:%M')"
-echo -e "$(colorize "IP: $THEip" $IPColor)"
+echo -e "$(colorize "Welcome to $SystemName @ $THEip | $PublicIP" $WelcomeColor) | $(date '+%b %d %H:%M')"
+echo -e "$(colorize "IP: $THEip | Public IP: $PublicIP" $IPColor)"
 echo -e "$(colorize "HostName: $HOSTNAME" $HostNameColor)"
 echo -e "$(colorize "RESTRICTED ACCESS SYSTEM!" $WarningColor)"
 echo -e "$(colorize "Authorize Access Only!" $WarningColor)"
