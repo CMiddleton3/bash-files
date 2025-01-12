@@ -15,13 +15,21 @@ fi
 echo "Changing to repository directory: $repo_dir"
 cd "$repo_dir"
 
-# Pull the latest changes from the Git repository
-echo "Pulling latest changes from repository"
-git pull
-
-# Check if there are any changes in the repository
+# Check if there are any changes in the repository and store the result in a variable
 if [ ! -z "$(git diff --name-only)" ]; then
-    # Copy the dot files to your home directory only if there are changes
+    has_changes="true"
+else
+    has_changes="false"
+fi
+
+# Conditionally pull the latest changes from the Git repository based on whether there are changes
+if [ "$has_changes" = "true" ]; then
+    echo "Pulling latest changes from repository"
+    git pull
+fi
+
+# Copy the dot files to your home directory only if there are changes
+if [ "$has_changes" = "true" ]; then
     echo "Copying .bashrc"
     cp .bashrc $HOME/.bashrc
     echo "Copying .bash_profile"
@@ -36,6 +44,7 @@ if [ ! -z "$(git diff --name-only)" ]; then
     cp .vimrc $HOME/.vimrc
     echo "Copying .tmux.conf"
     cp .tmux.conf $HOME/.tmux.conf
+
     # Source the updated dot files only if there are changes
     echo "Sourcing updated dot files"
     source $HOME/.bash_profile
@@ -44,7 +53,7 @@ else
     echo "No changes in repository."
 fi
 
-# Create a symlink to keep the .dot file synced only if it doesn't already exist
+# Create a symlink to keep the sync_dot_files.sh script synced only if it doesn't already exist
 if [ ! -e $HOME/sync_dot_files.sh ]; then
     echo "Creating symlink for sync_dot_files.sh"
     chmod +x $HOME/bash-files/sync_dot_files.sh
@@ -52,7 +61,7 @@ if [ ! -e $HOME/sync_dot_files.sh ]; then
 fi
 
 # Source the updated dot files
-if [ ! -z "$(git diff --name-only)" ]; then
+if [ "$has_changes" = "true" ]; then
     echo "Sourcing updated dot files"
     source $HOME/.bash_profile
 fi
