@@ -55,7 +55,7 @@ fi
 export MANPAGER="sh -c 'col -bx | vim -c \"set ft=man nomod nolist nowrap\" -'"
 
 # Get system IP Address
-THEip=$(ip route get 1 | awk '/src/ {print $7}')
+THEip=$(hostname -I | awk '{print $1}')
 THEip=${THEip:-"No Network"}
 
 # Function to get random ANSI color code
