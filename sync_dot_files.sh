@@ -19,7 +19,10 @@ git pull
 cp .bashrc ~/.bashrc
 cp .bash_profile ~/.bash_profile
 cp .bash_aliases ~/.bash_aliases
-
+cp .win_alaiases ~/.win_alaiases
+cp .misc_alaiases ~/.misc_alaiases
+cp .vimrc ~/.vimrc
+cp .tmux.conf ~/.tmux.conf
 # Source the updated dot files
 # source ~/.bashrc
 source ~/.bash_profile

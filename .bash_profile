@@ -4,19 +4,45 @@ SystemName="REPLACE-ME"
 # These commands are setting configurations related to the shell history in a bash script
 HISTCONTROL=ignoreboth
 shopt -s histappend
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # Source additional configuration files if they exist
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
+# if [ -f ~/.bashrc ]; then
+#     . ~/.bashrc
+# fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
 if [ -f ~/.win_aliases ]; then
     . ~/.win_aliases
+fi
+
+if [ -f ~/.ollama_aliases ]; then
+    . ~/.ollama_aliases
+fi
+
+if [ -f ~/.misc_aliases ]; then
+    . ~/.misc_aliases
+fi
+
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
 # Better looking man pages:
