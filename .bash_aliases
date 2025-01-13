@@ -50,6 +50,7 @@ alias gg='glances'             # Launch Glances system monitor
 # Python
 alias py='python3'             # Short Python 3 alias
 alias pip='pip3'               # Short Pip 3 alias
+alias python='python3'
 
 # Docker
 alias dps='docker ps'          # List running containers
