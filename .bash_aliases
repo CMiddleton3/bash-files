@@ -67,7 +67,7 @@ alias free='free -h'           # Human-readable memory usage
 alias grep='grep --color=auto' # Grep with color
 alias cls='clear; echo "Cleared screen!"' # Clear with message
 alias hist='history | tail -n 20' # Show last 20 commands
-alias top='htop'               # Use htop if installed
+alias top='top'               # Use htop if installed
 alias gitlog='git log --oneline --graph --decorate --all' # Improved Git log
 
 # Ollama
