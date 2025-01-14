@@ -20,6 +20,7 @@ alias servlist='sudo systemctl list-units --state=running' # List running servic
 # Shell Management
 alias cls='clear'              # Clear screen
 alias reload='source ~/.bash_profile' # Reload bash configuration
+alias vibash='vi ~/.bash_aliases'
 alias q='exit'                 # Quit terminal
 
 # File and Directory Management

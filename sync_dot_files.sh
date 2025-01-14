@@ -44,6 +44,7 @@ if [ "$has_changes" = "true" ]; then
     cp .vimrc $HOME/.vimrc
     echo "Copying .tmux.conf"
     cp .tmux.conf $HOME/.tmux.conf
+    echo "Copying .bash_alaias_no_login
 
     # Source the updated dot files only if there are changes
     echo "Sourcing updated dot files"
