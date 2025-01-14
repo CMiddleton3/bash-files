@@ -46,6 +46,7 @@ if [ "$has_changes" = "true" ]; then
     cp .tmux.conf $HOME/.tmux.conf
     echo "Copying .bash_aliases_no_login"
     cp .bash_aliases_no_login $HOME/.bash_aliases_no_login
+    cp toprc $HOME/.config/procps/toprc
 
     # Source the updated dot files only if there are changes
     echo "Sourcing updated dot files"
