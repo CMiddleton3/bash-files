@@ -16,7 +16,7 @@ echo "Changing to repository directory: $repo_dir"
 cd "$repo_dir"
 
 # Check if there are any changes in the repository and store the result in a variable
-if [ ! -z "$(git diff --name-only)" ]; then
+if git diff --exit-code origin/main; then
     has_changes="true"
 else
     has_changes="false"
