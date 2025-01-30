@@ -32,6 +32,18 @@ sudo apt-get install -y curl
 echo "Installing iftop..."
 sudo apt-get install -y iftop
 
+# Install telnet
+echo "Installing telnet..."
+sudo apt-get install -y telnet
+
+# Install btop
+echo "Installing btop..."
+sudo apt-get install -y btop
+
+# Install htop
+echo "Installing htop..."
+sudo apt-get install -y htop
+
 # Install tmux
 echo "Installing tmux..."
 sudo apt-get install -y tmux
@@ -62,7 +74,7 @@ sudo apt-get install -y multitail
 
 # Install bing9-utils
 echo "Installing bind9-utils..."
-sudo apt-get install -y bing9-utils
+sudo apt-get install -y bind9-utils
 
 echo "All software installed successfully."
 

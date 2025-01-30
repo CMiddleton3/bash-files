@@ -13,6 +13,7 @@ alias duuu='du --max-depth=1 -h' # Human-readable depth-1 disk usage
 alias upgrade='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y' # Full system upgrade
 alias ports='netstat -tulanp'  # List active ports and services
 alias err='journalctl -xe --since "1 hour ago"' # Show errors from the past hour
+alias jj='sudo journalctl'
 alias myip='curl ifconfig.me'  # Show public IP address
 alias sysctl='sudo systemctl'  # Shorter systemctl alias
 alias servlist='sudo systemctl list-units --state=running' # List running services
@@ -67,7 +68,7 @@ alias free='free -h'           # Human-readable memory usage
 alias grep='grep --color=auto' # Grep with color
 alias cls='clear; echo "Cleared screen!"' # Clear with message
 alias hist='history | tail -n 20' # Show last 20 commands
-alias top='top'               # Use htop if installed
+alias top='top'               # Use force if installed
 alias gitlog='git log --oneline --graph --decorate --all' # Improved Git log
 
 # Ollama
