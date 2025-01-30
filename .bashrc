@@ -12,6 +12,9 @@ esac
 if [ -f ~/.bash_aliases_no_login ]; then
     . ~/.bash_aliases_no_login
 fi
+if [ -f "$HOME/.bash_profile" ]; then
+    . "$HOME/.bash_profile"
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
