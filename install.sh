@@ -76,6 +76,10 @@ sudo apt-get install -y multitail
 echo "Installing bind9-utils..."
 sudo apt-get install -y bind9-utils
 
+# Install bind9-dnsutils
+echo "Installing bind9-dnsutils..."
+sudo apt-get install -y bind9-dnsutils
+
 echo "All software installed successfully."
 
 
