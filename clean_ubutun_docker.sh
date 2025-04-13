@@ -20,7 +20,9 @@ sudo rm -rf ~/.cache/*
 # Clear journal logs (optional)
 echo "Clearing journal logs..."
 sudo journalctl --vacuum-time=1s
-# > ~/.bash_history
+> ~/.bash_history
+history -w
+history -c
 
 # Clear System Logs
 echo "Clear System Logs"
