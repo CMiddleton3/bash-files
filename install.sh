@@ -29,20 +29,20 @@ echo "Installing curl..."
 sudo apt-get install -y curl
 
 # Install iftop
-echo "Installing iftop..."
-sudo apt-get install -y iftop
+#echo "Installing iftop..."
+#sudo apt-get install -y iftop
 
 # Install telnet
 echo "Installing telnet..."
 sudo apt-get install -y telnet
 
 # Install btop
-echo "Installing btop..."
-sudo apt-get install -y btop
+#echo "Installing btop..."
+#sudo apt-get install -y btop
 
 # Install htop
-echo "Installing htop..."
-sudo apt-get install -y htop
+#echo "Installing htop..."
+#sudo apt-get install -y htop
 
 # Install tmux
 echo "Installing tmux..."
@@ -57,16 +57,16 @@ echo "Installing net-tools..."
 sudo apt-get install -y net-tools
 
 # Install glances
-echo "Installing glances..."
-sudo apt-get install -y glances
+#echo "Installing glances..."
+#sudo apt-get install -y glances
 
 # Install htop
-echo "Installing htop..."
-sudo apt-get install -y htop
+#echo "Installing htop..."
+#sudo apt-get install -y htop
 
 # Install ranger
-echo "Installing ranger..."
-sudo apt-get install -y ranger
+#echo "Installing ranger..."
+#sudo apt-get install -y ranger
 
 # Install multitail
 echo "Installing multitail..."
