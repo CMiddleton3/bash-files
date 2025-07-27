@@ -55,9 +55,9 @@ alias pip='pip3'               # Short Pip 3 alias
 alias python='python3'
 
 # Docker
-alias dps='docker ps'          # List running containers
-alias dpa='docker ps -a'       # List all containers
-alias dstop='docker stop $(docker ps -q)' # Stop all running containers
+alias dps='sudo docker ps'          # List running containers
+alias dpa='sudo docker ps -a'       # List all containers
+alias dstop='sudo docker stop $(docker ps -q)' # Stop all running containers
 
 # Kubernetes
 alias k='kubectl'              # Short Kubectl alias
